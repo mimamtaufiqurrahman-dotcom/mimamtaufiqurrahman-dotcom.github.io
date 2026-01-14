@@ -1625,6 +1625,30 @@ mark{
 .hero.hero--inner .subtitle{
   text-shadow: 0 2px 12px rgba(0,0,0,0.22);
 }
+/* =========================
+   Hero background: lighten overlay (Tentang/Contact)
+   ========================= */
+
+/* Paksa overlay jadi lebih terang */
+.page-header{
+  /* kalau sebelumnya pakai gradient gelap + gambar */
+  background-image:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    var(--page-hero-image) !important;
+}
+
+/* Kalau hero Anda tidak pakai CSS variable, maka override pseudo overlay */
+.page-header::before{
+  background: rgba(0,0,0,0.16) !important;
+}
+
+/* Teks tetap terbaca, tapi tidak perlu gelap banget */
+.page-header h1{
+  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.page-header .subtitle{
+  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+}
 
 /* =========================
    FIX: Hero Contact masih gelap
