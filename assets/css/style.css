@@ -1610,3 +1610,27 @@ mark{
   border-color: rgba(15, 23, 42, .28);
   color: rgba(15, 23, 42, 1);
 }
+/* =========================
+   FIX: Hero Contact masih gelap
+   (override gradient di background + overlay element)
+   ========================= */
+
+/* 1) Override gradient gelap di background hero */
+.hero.hero--inner{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    url("../images/hero.jpg") !important;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 2) Kalau masih ada overlay element, tipiskan juga */
+.hero.hero--inner .hero-overlay{
+  opacity: 0.18 !important;
+}
+
+/* 3) Teks tetap kebaca, tapi tidak perlu gelap */
+.hero.hero--inner h1,
+.hero.hero--inner .subtitle{
+  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+}
