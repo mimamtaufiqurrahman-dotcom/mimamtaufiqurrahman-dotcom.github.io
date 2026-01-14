@@ -1,6 +1,23 @@
 {
   "generated": "2026-01-14",
+  "labels": [
+    "harian",
+    "motivasi",
+    "pemikiran",
+    "perjuangan"
+  ],
   "posts": [
+    {
+      "title": "Ikhlas dalam Berjuang di Jalan Pengabdian",
+      "url": "../artikel/ikhlas-dalam-berjuang-di-jalan-pengabdian.html",
+      "date": "2026-01-14",
+      "labels": [
+        "harian",
+        "motivasi",
+        "perjuangan"
+      ],
+      "excerpt": "Ada masa ketika kita merasa semangat begitu penuh. Kita ingin memberi yang terbaik, menolong lebih banyak orang, menyelesaikan amanah lebih cepat, dan terus bertumbuh. Tapi ada ju…"
+    },
     {
       "title": "Waktu, Disiplin, dan Tanggung Jawab",
       "url": "../artikel/detail-waktu-disiplin-tanggungjawab.html",
@@ -10,7 +27,7 @@
         "motivasi",
         "pemikiran"
       ],
-      "excerpt": "Waktu itu terasa sederhana, tapi sering jadi sumber masalah paling besar. Bukan karena kita tidak punya waktu, melainkan karena kita tidak sadar ke mana waktunya pergi. Di s…"
+      "excerpt": "Waktu itu terasa sederhana, tapi sering jadi sumber masalah paling besar. Bukan karena kita tidak punya waktu, melainkan karena kita tidak sadar ke mana waktunya pergi. Di sisi la…"
     },
     {
       "title": "Belajar Mendengar Sebelum Menilai",
@@ -21,7 +38,7 @@
         "motivasi",
         "pemikiran"
       ],
-      "excerpt": "Ada kebiasaan kecil yang sering kita lakukan tanpa sadar: menilai orang lain sebelum benar-benar mendengarkan. Kita melihat potongan cerita, membaca satu kalimat, …"
+      "excerpt": "Ada kebiasaan kecil yang sering kita lakukan tanpa sadar: menilai orang lain sebelum benar-benar mendengarkan. Kita melihat potongan cerita, membaca satu kalimat, lalu otak segera…"
     },
     {
       "title": "Menjaga Akal Sehat di Tengah Hiruk Pikuk",
@@ -32,11 +49,5 @@
       ],
       "excerpt": "Kita hidup di zaman yang penuh dengan arus informasi. Setiap hari, berita, opini, dan komentar berseliweran tanpa henti di hadapan kita."
     }
-  ],
-  "labels": [
-    "harian",
-    "motivasi",
-    "pemikiran",
-    "perjuangan"
   ]
 }

@@ -4,14 +4,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Catatan — Arsip Berdasarkan Label</title>
+<title>Catatan Pemikiran</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../assets/css/variables.css" rel="stylesheet"/>
 <link href="../assets/css/style.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
-</head>
+<meta content="0; url=index.html?label=pemikiran" http-equiv="refresh"/></head>
 <body>
-<!-- HEADER (tetap pakai yang sama) -->
 <!-- ================= HEADER ================= -->
 <header class="site-header">
 <div class="container nav-wrapper">
@@ -60,56 +59,31 @@
 <li class="nav-search"><form action="#" class="site-search" method="get" role="search"><label class="sr-only" for="siteSearchInput">Cari catatan</label><input autocomplete="off" id="siteSearchInput" name="q" placeholder="Cari catatan…" type="search"/><button aria-label="Cari" type="submit">Cari</button></form></li></ul>
 </nav>
 </div>
-</header>
-<!-- ================= PAGE HEADER ================= -->
-<section class="page-header">
-<div class="container">
-<h1>Catatan</h1>
-<p>Arsip tulisan berdasarkan label/kategori.</p>
-</div>
-</section>
+</header><section class="page-header"><h1>Redirecting…</h1><p>Halaman ini sudah dipindahkan ke arsip label. Jika tidak otomatis, klik tautan di bawah.</p><p><a href="index.html?label=pemikiran">Buka arsip label</a></p></section>
+
 <!-- ================= LIST ARTIKEL ================= -->
-<section class="article-list"><h2 id="catatanTitle">Semua Catatan</h2><p class="small-muted" id="catatanDesc">Pilih label untuk memfilter daftar tulisan.</p><div class="label-chips" id="labelChips"></div><div class="article-grid" id="postList"></div><div class="empty-state" id="emptyState" style="display:none;">
-<p>Tidak ada posting untuk label ini.</p>
-</div></section>
+
 <!-- ================= PAGINATION ================= -->
-<nav class="pagination" data-per-page="6">
+<nav class="pagination">
 <ul>
-<!-- diisi otomatis oleh JavaScript -->
+<li class="prev disabled">
+<span>← Sebelumnya</span>
+</li>
+<li class="active">
+<span>1</span>
+</li>
+<li class="next disabled">
+<span>Selanjutnya →</span>
+</li>
 </ul>
 </nav>
 <!-- MEDIA SOSIAL -->
-<section class="media-social">
-<div class="container">
-<div class="media-header">
-<h2>Media Sosial</h2>
-<p>Ikuti dan terhubung melalui kanal resmi</p>
-</div>
-<div class="media-card">
-<!-- KIRI: FOTO / LOGO -->
-<div class="media-profile">
-<img alt="Foto Profil" src="../assets/images/profile.jpg"/>
-<h3>Akun Resmi</h3>
-<div class="social-icons">
-<a aria-label="Facebook" href="#"><i class="fab fa-facebook-f"></i></a>
-<a aria-label="X" href="#"><i class="fab fa-x-twitter"></i></a>
-<a aria-label="Instagram" href="#"><i class="fab fa-instagram"></i></a>
-<a aria-label="YouTube" href="#"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
-<!-- KANAN: QUOTE IMAGE -->
-<div class="media-quote">
-<img alt="Quote" class="quote-image" src="../assets/images/quote.jpg"/>
-</div>
-</div>
-</div>
-</section>
+
 <footer class="site-footer">
 <div class="container">
 <p>© 2026 Website Personal.</p>
 </div>
 </footer>
 <script src="../assets/js/main.js"></script>
-<script src="../assets/js/catatan.js"></script>
 </body>
 </html>

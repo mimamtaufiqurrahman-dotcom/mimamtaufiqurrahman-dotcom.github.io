@@ -74,8 +74,8 @@
     }
 
     const html = filtered.map(p => {
-      const meta = [p.date ? formatDate(p.date) : "", (p.labels || []).length ? (p.labels || []).map(humanLabel).join(", ") : ""]
-        .filter(Boolean).join(" • ");
+      const meta = [p.date ? formatDate(p.date) : "", (p.labels || []).length ? (p.labels || []).map(humanLabel).join(" · ") : ""]
+        .filter(Boolean).join(" · ");
 
       return `
         <article class="article-card">
