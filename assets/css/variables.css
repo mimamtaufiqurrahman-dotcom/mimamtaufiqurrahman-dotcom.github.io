@@ -1,0 +1,27 @@
+:root {
+  --primary: #0f172a; /* navy gelap */
+  --secondary: #334155; /* abu kebiruan */
+  --accent: #cbd5e1; /* abu terang */
+  --text-dark: #020617;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+
+  --font-main: "Inter", sans-serif;
+}
+
+/* =================================================
+   UI TOKENS (finishing)
+================================================= */
+:root {
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.06);
+  --shadow-md: 0 10px 24px rgba(2, 6, 23, 0.10);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
