@@ -1611,6 +1611,22 @@ mark{
   color: rgba(15, 23, 42, 1);
 }
 /* =========================
+   Hero overlay (inner pages) - lighten
+   Target: Tentang / Contact (hero hero--inner)
+   ========================= */
+
+/* Ini yang bikin gelap: overlay layer */
+.hero.hero--inner .hero-overlay{
+  opacity: 0.18 !important; /* rekomendasi: 0.18 */
+}
+
+/* Optional: teks tetap kebaca tanpa harus menggelapkan background */
+.hero.hero--inner h1,
+.hero.hero--inner .subtitle{
+  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+}
+
+/* =========================
    FIX: Hero Contact masih gelap
    (override gradient di background + overlay element)
    ========================= */
