@@ -1626,51 +1626,33 @@ mark{
   text-shadow: 0 2px 12px rgba(0,0,0,0.22);
 }
 /* =========================
-   Hero background: lighten overlay (Tentang/Contact)
+   Global hero overlay (uniform brightness)
    ========================= */
 
-/* Paksa overlay jadi lebih terang */
-.page-header{
-  /* kalau sebelumnya pakai gradient gelap + gambar */
+/* 1) Pastikan semua hero pakai overlay yang sama */
+.hero .hero-overlay{
+  opacity: 0.18 !important;   /* samakan (ubah 0.18 ke 0.15/0.20 sesuai selera) */
+}
+
+/* 2) Kalau ada gradient gelap langsung di background-image, netralkan */
+.hero{
   background-image:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    var(--page-hero-image) !important;
-}
-
-/* Kalau hero Anda tidak pakai CSS variable, maka override pseudo overlay */
-.page-header::before{
-  background: rgba(0,0,0,0.16) !important;
-}
-
-/* Teks tetap terbaca, tapi tidak perlu gelap banget */
-.page-header h1{
-  text-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
-.page-header .subtitle{
-  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
-}
-
-/* =========================
-   FIX: Hero Contact masih gelap
-   (override gradient di background + overlay element)
-   ========================= */
-
-/* 1) Override gradient gelap di background hero */
-.hero.hero--inner{
-  background-image:
-    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    url("../images/hero.jpg") !important;
+    url("assets/images/hero.jpg") !important;
   background-size: cover;
   background-position: center;
 }
 
-/* 2) Kalau masih ada overlay element, tipiskan juga */
-.hero.hero--inner .hero-overlay{
-  opacity: 0.18 !important;
+/* 3) Halaman dalam (tentang/contact) file css berada di root juga, jadi path aman */
+.hero.hero--inner{
+  background-image:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    url("assets/images/hero.jpg") !important;
 }
 
-/* 3) Teks tetap kebaca, tapi tidak perlu gelap */
-.hero.hero--inner h1,
-.hero.hero--inner .subtitle{
+/* 4) Biar teks tetap jelas walau overlay lebih terang */
+.hero h1,
+.hero .subtitle{
   text-shadow: 0 2px 12px rgba(0,0,0,0.22);
 }
+
