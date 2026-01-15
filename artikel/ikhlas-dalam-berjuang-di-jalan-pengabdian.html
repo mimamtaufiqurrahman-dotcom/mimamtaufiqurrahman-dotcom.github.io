@@ -21,38 +21,53 @@
 
   <!-- HEADER / NAV (sesuaikan jika struktur header Anda sedikit berbeda) -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../index.html">
-        <img src="../assets/images/logo.png" alt="Logo" class="brand-logo" />
-        <span class="brand-text">Catatan | Imam</span>
-      </a>
-
-      <button class="nav-toggle" aria-label="Buka menu">☰</button>
-
-      <nav class="main-nav" aria-label="Navigasi utama">
-        <button class="nav-close" aria-label="Tutup menu">✕</button>
-        <a href="../index.html">Beranda</a>
-        <a href="../tentang.html">Tentang</a>
-
-        <div class="dropdown">
-          <button class="dropdown-toggle" aria-expanded="false">Catatan ▾</button>
-          <div class="dropdown-menu">
-            <a href="../catatan/index.html?label=harian">Harian</a>
-            <a href="../catatan/index.html?label=pemikiran">Pemikiran</a>
-            <a href="../catatan/index.html?label=motivasi">Motivasi</a>
-            <a href="../catatan/index.html?label=perjuangan">Perjuangan</a>
-          </div>
-        </div>
-
-        <a href="../contact.html">Contact</a>
-
-        <form class="site-search" action="../search.html" method="get">
-          <input id="siteSearchInput" name="q" type="search" placeholder="Cari catatan..." autocomplete="off" />
-          <button type="submit">Cari</button>
-        </form>
-      </nav>
-    </div>
-  </header>
+<div class="container nav-wrapper">
+<!-- Logo kiri -->
+<div class="logo">
+<img alt="Logo" class="logo-img" src="../assets/images/logo.png"/><span aria-label="Catatan | Imam" class="logo-text">
+<span class="brand-main">Catatan</span>
+<span class="brand-sep">|</span>
+<span class="brand-sub">Imam</span>
+</span>
+</div>
+<!-- Hamburger Button (Mobile) -->
+<a aria-label="Cari" class="nav-search-icon" href="../search.html"><svg aria-hidden="true" fill="none" viewbox="0 0 24 24"><path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"></path><path d="M16.2 16.2 21 21" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></a>
+<!-- Hamburger Button (Mobile) -->
+<button aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu" class="nav-toggle" type="button">
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+<span aria-hidden="true"></span>
+</button>
+<!-- Navigation -->
+<nav aria-label="Navigasi utama" class="main-nav" id="navMenu">
+<div class="nav-drawer-header">
+<div class="nav-drawer-brand">
+<img alt="Logo" src="../assets/images/logo.png"/>
+<span aria-label="Catatan | Imam" class="nav-drawer-text">
+<span class="brand-main">Catatan</span>
+<span class="brand-sep">|</span>
+<span class="brand-sub">Imam</span>
+</span>
+</div>
+<button aria-label="Tutup menu" class="nav-close" type="button">✕</button>
+</div>
+<ul>
+<li><a href="../index.html">Beranda</a></li>
+<li><a href="../tentang.html">Tentang</a></li>
+<li class="dropdown">
+<a aria-controls="submenu-catatan" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" href="#"><span class="dd-label">Catatan</span><span aria-hidden="true" class="dd-chevron">▾</span></a>
+<ul class="dropdown-menu" id="submenu-catatan">
+<li><a href="../catatan/index.html?label=harian">Harian</a></li>
+<li><a href="../catatan/index.html?label=pemikiran">Pemikiran</a></li>
+<li><a href="../catatan/index.html?label=motivasi">Motivasi</a></li>
+<li><a href="../catatan/index.html?label=perjuangan">Perjuangan</a></li>
+</ul>
+</li>
+<li><a href="../contact.html">Contact</a></li>
+<li class="nav-search"><form action="../search.html" class="site-search" method="get" role="search"><label class="sr-only" for="siteSearchInput">Cari catatan</label><input autocomplete="off" id="siteSearchInput" name="q" placeholder="Cari catatan…" type="search"/><button aria-label="Cari" type="submit">Cari</button></form></li></ul>
+</nav>
+</div>
+</header>
 
   <!-- HERO / PAGE HEADER -->
   <section class="page-header">
@@ -166,10 +181,10 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 Website Personal. Semua hak cipta dilindungi.</p>
-    </div>
-  </footer>
+<div class="container">
+<p>© 2026 Website Personal. Dibangun dengan kesederhanaan.</p>
+</div>
+</footer>
 
   <!-- JS utama -->
   <script src="../assets/js/main.js"></script>

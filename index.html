@@ -16,8 +16,10 @@
 <link href="assets/css/style.css" rel="stylesheet"/>
 <!-- FONT AWESOME (ICON SOSIAL) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
-</meta></head>
+</meta>  <link rel="preload" as="image" href="/assets/images/hero.jpg" imagesizes="100vw" />
+</head>
 <body>
+<div id="readingProgress"></div>
 <!-- ================= HEADER ================= -->
 <!-- ================= HEADER ================= -->
 <header class="site-header">
@@ -72,8 +74,6 @@
 <section class="hero" id="hero">
 <img alt="Hero background" class="hero-bg" decoding="async" fetchpriority="high" src="assets/images/hero.jpg"/>
 <div class="hero-overlay"></div>
-<div class="container hero-content">
-</div>
 </section>
 <!-- ================= CONTENT ================= -->
 <section class="content">
@@ -89,7 +89,7 @@
   </div>
 
   <p style="margin-top:16px;">
-    <a href="catatan/index.html">Lihat semua catatan →</a>
+    <a class="btn btn-glass btn-sm" href="catatan/index.html">Lihat semua catatan →</a>
   </p>
 </div>
 </section>

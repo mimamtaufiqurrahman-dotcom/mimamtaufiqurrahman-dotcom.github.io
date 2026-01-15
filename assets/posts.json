@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-14",
+  "generated": "2026-01-15",
   "labels": [
     "harian",
     "motivasi",
@@ -7,6 +7,15 @@
     "perjuangan"
   ],
   "posts": [
+    {
+      "title": "Terus Melangkah",
+      "url": "../artikel/terus-melangkah.html",
+      "date": "2026-01-15",
+      "labels": [
+        "motivasi"
+      ],
+      "excerpt": "Ketika langkah terasa berat, tetap bergerak adalah bentuk harapan."
+    },
     {
       "title": "Ikhlas dalam Berjuang di Jalan Pengabdian",
       "url": "../artikel/ikhlas-dalam-berjuang-di-jalan-pengabdian.html",

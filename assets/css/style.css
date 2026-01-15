@@ -234,16 +234,17 @@ a {
 /* =================================================
    HERO SECTION
 ================================================= */
-.hero {
-  padding: 120px 0;
-  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)),
-    url("../images/hero.jpg") center / cover no-repeat;
+.hero{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: var(--hero-min-height, 520px);
   color: var(--white);
+  background: #0f172a; /* fallback */
 }
 
-.hero-content {
-  max-width: 720px;
-}
+
 
 .hero h1 {
   font-size: 48px;
@@ -917,17 +918,18 @@ img {
   object-fit: cover;
 }
 
-.hero-overlay {
+.hero-overlay{
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(15, 23, 42, var(--hero-overlay-alpha, 0.18));
 }
 
-.hero-content {
+.hero-content{
   position: relative;
   z-index: 1;
-  color: #fff;
-  padding: 120px 0;
+  width: 100%;
+  padding: var(--hero-pad-y, 88px) 0;
+  color: var(--white);
 }
 /* FIX: Media Sosial di mobile harus stack kebawah */
 @media (max-width: 900px) {
@@ -1611,48 +1613,506 @@ mark{
   color: rgba(15, 23, 42, 1);
 }
 /* =========================
-   Hero overlay (inner pages) - lighten
-   Target: Tentang / Contact (hero hero--inner)
-   ========================= */
 
-/* Ini yang bikin gelap: overlay layer */
-.hero.hero--inner .hero-overlay{
-  opacity: 0.18 !important; /* rekomendasi: 0.18 */
-}
-
-/* Optional: teks tetap kebaca tanpa harus menggelapkan background */
-.hero.hero--inner h1,
-.hero.hero--inner .subtitle{
-  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
-}
 /* =========================
-   Global hero overlay (uniform brightness)
+   HERO (GLOBAL): samakan ukuran + terang/gelap
+   Berlaku untuk: Beranda, Tentang, Contact
    ========================= */
 
-/* 1) Pastikan semua hero pakai overlay yang sama */
-.hero .hero-overlay{
-  opacity: 0.18 !important;   /* samakan (ubah 0.18 ke 0.15/0.20 sesuai selera) */
+:root{
+  --hero-min-height: 520px;
+  --hero-min-height-mobile: 360px;
+  --hero-pad-y: 88px;
+  --hero-pad-y-mobile: 64px;
+  --hero-overlay-alpha: 0.18;
 }
 
-/* 2) Kalau ada gradient gelap langsung di background-image, netralkan */
-.hero{
-  background-image:
-    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    url("assets/images/hero.jpg") !important;
+/* Contact memakai .hero--inner tanpa <img class="hero-bg">, jadi set background via CSS */
+.hero.hero--inner{
+  background-image: var(--hero-image-url) !important;
   background-size: cover;
   background-position: center;
 }
 
-/* 3) Halaman dalam (tentang/contact) file css berada di root juga, jadi path aman */
-.hero.hero--inner{
-  background-image:
-    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    url("assets/images/hero.jpg") !important;
+/* Responsif */
+@media (max-width: 640px){
+  .hero{
+    min-height: var(--hero-min-height-mobile);
+  }
+  .hero-content{
+    padding: var(--hero-pad-y-mobile) 0;
+  }
 }
 
-/* 4) Biar teks tetap jelas walau overlay lebih terang */
-.hero h1,
-.hero .subtitle{
-  text-shadow: 0 2px 12px rgba(0,0,0,0.22);
+
+/* =========================
+   Global hero background (prevent flicker between pages)
+   - Use a single absolute URL so cache is reused
+   - Hide <img class="hero-bg"> so all pages rely on CSS background
+   ========================= */
+:root{
+  --hero-image-url: url("/assets/images/hero.jpg");
+}
+
+.hero{
+  background-color: #0b1220; /* fallback while image loads */
+  background-image: var(--hero-image-url) !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* If some pages include an <img class="hero-bg">, hide it to avoid flash/layout differences */
+.hero .hero-bg{
+  display: none !important;
+}
+
+
+/* --- Hero brightness unify: ensure single overlay source --- */
+.hero .hero-overlay{
+  background: rgba(15, 23, 42, var(--hero-overlay-alpha, 0.18)) !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================
+   HERO FINAL SETTING (PAS UNTUK GAMBAR INI)
+   ========================= */
+
+.hero{
+  min-height: 560px;
+  background-position: left 30% top 20% !important;
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .hero{
+    min-height: 380px;
+    background-position: center top 18% !important;
+  }
+}
+/* =========================
+   Hero per halaman
+   ========================= */
+
+.hero--tentang{
+  --hero-image-url: url("../images/hero--tentang.jpg");
+}
+
+.hero--contact{
+  --hero-image-url: url("../images/hero--contact.jpg");
+}
+
+
+/* =========================
+   PREMIUM PACK v1
+   ========================= */
+
+.hero{
+  overflow: hidden;
+}
+.hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  animation: heroZoom 14s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes heroZoom{
+  from{ transform: scale(1); }
+  to{ transform: scale(1.035); }
+}
+
+.article-content p{
+  font-size: 1.05rem;
+  line-height: 1.85;
+  letter-spacing: .01em;
+}
+
+.article-card{
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.article-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+}
+
+#readingProgress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg,#0f172a,#334155);
+  z-index: 9999;
+}
+
+
+/* =========================
+   ABOUT CONTENT (konsisten & premium)
+   ========================= */
+.about-content{
+  max-width: 900px;
+}
+
+.about-content .lead{
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(15, 23, 42, 0.78);
+  margin: 12px 0 18px;
+}
+
+.about-content p{
+  font-size: 1.05rem;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: rgba(15, 23, 42, 0.90);
+  margin: 0 0 1.1em;
+}
+
+.about-content h3{
+  margin: 1.6rem 0 .7rem;
+  font-size: 1.15rem;
+}
+
+.about-content ul{
+  margin: .4rem 0 1.2rem 1.1rem;
+  padding-left: 0;
+}
+
+.about-content li{
+  margin: .45rem 0;
+  line-height: 1.75;
+}
+
+.about-content .cta-row{
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTONS (global)
+   ========================= */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform .2s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease, color .25s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+}
+
+.btn:active{
+  transform: translateY(0);
+}
+
+.btn-outline{
+  background: transparent;
+  border-color: rgba(15, 23, 42, .18);
+  color: rgba(15, 23, 42, .92);
+}
+
+/* Glass effect */
+.btn-glass{
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: rgba(15, 23, 42, .95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.btn-glass.btn-outline{
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-glass:hover{
+  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+}
+
+.btn-sm{
+  padding: 8px 14px;
+  font-size: 0.92rem;
+}
+
+/* =========================
+   SPACING: rapikan jarak Content -> Media Sosial
+   ========================= */
+.content{
+  padding-bottom: 48px;
+}
+.content + .media-social{
+  padding-top: 56px;
+}
+
+
+/* =========================
+   FIX: NAVBAR LOGO OVERSIZE
+   ========================= */
+.site-header .brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.site-header .brand-logo{
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+/* Prevent generic img rules from blowing up header icons */
+.site-header img{
+  max-width: none;
+}
+
+@media (max-width: 480px){
+  .site-header .brand-logo{
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 9px;
+  }
+}
+/* ===========================
+   MEDIUM-LIKE ARTICLE POLISH
+   =========================== */
+
+/* 1) Lebar baca + ritme paragraf */
+.article-content,
+.post-content,
+article.post {
+  max-width: 68ch;            /* lebar nyaman ala Medium */
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.85;
+  letter-spacing: 0.1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Kalau di template kamu kontennya ada wrapper lain (umum: .container) */
+.article-content .container,
+.post-content .container {
+  max-width: none;
+}
+
+/* 2) Spasi antar elemen */
+.article-content p,
+.post-content p,
+article.post p {
+  margin: 0 0 1.05em;
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+article.post h2,
+article.post h3,
+article.post h4 {
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  margin: 1.6em 0 0.6em;
+}
+
+.article-content h2,
+.post-content h2,
+article.post h2 { font-size: 1.55em; }
+
+.article-content h3,
+.post-content h3,
+article.post h3 { font-size: 1.25em; }
+
+.article-content h4,
+.post-content h4,
+article.post h4 { font-size: 1.1em; }
+
+/* 3) Judul artikel (page header) lebih “editorial” */
+.page-header h1,
+.post-header h1,
+.article-header h1 {
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+  margin-bottom: 10px;
+}
+
+.page-header .subtitle,
+.post-header .subtitle,
+.article-header .subtitle {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  opacity: 0.82;
+  max-width: 62ch;
+}
+
+/* 4) Link ala Medium */
+.article-content a,
+.post-content a,
+article.post a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  padding-bottom: 2px;
+  opacity: 0.95;
+  transition: opacity .15s ease, background-size .15s ease;
+}
+
+.article-content a:hover,
+.post-content a:hover,
+article.post a:hover {
+  opacity: 1;
+  background-size: 100% 2px;
+}
+
+/* 5) Quote block yang elegan */
+.article-content blockquote,
+.post-content blockquote,
+article.post blockquote {
+  margin: 1.4em 0;
+  padding: 0.2em 0 0.2em 1.1em;
+  border-left: 3px solid rgba(0,0,0,.2);
+  font-style: italic;
+  opacity: 0.92;
+}
+
+.article-content blockquote p,
+.post-content blockquote p,
+article.post blockquote p {
+  margin: 0.65em 0;
+}
+
+/* 6) List lebih rapi */
+.article-content ul,
+.article-content ol,
+.post-content ul,
+.post-content ol,
+article.post ul,
+article.post ol {
+  margin: 0.4em 0 1.1em;
+  padding-left: 1.2em;
+}
+
+.article-content li,
+.post-content li,
+article.post li {
+  margin: 0.35em 0;
+}
+
+/* 7) Gambar di artikel (kalau ada) premium: radius + caption */
+.article-content figure,
+.post-content figure,
+article.post figure {
+  margin: 1.4em 0;
+}
+
+.article-content img,
+.post-content img,
+article.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.article-content figcaption,
+.post-content figcaption,
+article.post figcaption {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  opacity: 0.72;
+  text-align: center;
+}
+
+/* 8) Pemisah halus (kalau ada hr) */
+.article-content hr,
+.post-content hr,
+article.post hr {
+  border: 0;
+  height: 1px;
+  background: rgba(0,0,0,.08);
+  margin: 2.2em 0;
+}
+
+/* 9) “Drop cap” (paragraf pertama) — opsional, aktif otomatis
+   Aman kalau paragraf pertama cukup panjang.
+*/
+.article-content p:first-of-type::first-letter,
+.post-content p:first-of-type::first-letter,
+article.post p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.2em;
+  line-height: 0.9;
+  padding-right: 10px;
+  padding-top: 6px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* 10) Mobile tuning (biar nyaman seperti Medium) */
+@media (max-width: 640px) {
+  .article-content,
+  .post-content,
+  article.post {
+    font-size: 16.5px;
+    line-height: 1.78;
+    max-width: 92vw;
+  }
+
+  .page-header h1,
+  .post-header h1,
+  .article-header h1 {
+    font-size: 28px;
+  }
+
+  /* Drop cap di mobile kadang terlalu besar; kecilkan */
+  .article-content p:first-of-type::first-letter,
+  .post-content p:first-of-type::first-letter,
+  article.post p:first-of-type::first-letter {
+    font-size: 2.7em;
+  }
+}
+/* CTA bawah artikel: rapih & premium */
+.article-footer,
+.post-footer {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* kalau belum ada class glass untuk btn */
+.btn.btn-glass{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 

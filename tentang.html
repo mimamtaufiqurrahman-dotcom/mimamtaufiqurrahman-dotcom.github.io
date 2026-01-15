@@ -16,8 +16,10 @@
 <link href="assets/css/style.css" rel="stylesheet"/>
 <!-- FONT AWESOME (ICON SOSIAL) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
-</meta></head>
+</meta>  <link rel="preload" as="image" href="assets/images/hero--tentang.jpg" imagesizes="100vw" />
+</head>
 <body>
+<div id="readingProgress"></div>
 <!-- ================= HEADER ================= -->
 <!-- ================= HEADER ================= -->
 <header class="site-header">
@@ -69,50 +71,53 @@
 </div>
 </header>
 <!-- ================= HERO ================= -->
-<section class="hero" id="hero">
-<img alt="Hero background" class="hero-bg" decoding="async" fetchpriority="high" src="assets/images/hero.jpg"/>
+<section class="hero hero--inner hero--tentang" id="hero">
+<img alt="Hero background" class="hero-bg" decoding="async" fetchpriority="high" src="assets/images/hero--tentang.jpg"/>
 <div class="hero-overlay"></div>
-<div class="container hero-content">
-</div>
 </section>
 <!-- ================= CONTENT ================= -->
 <section class="content">
-<div class="container">
-<h2>Kenapa Website Ini Ada</h2>
-<p class="subtitle">
+  <div class="container about-content">
+    <h2>Kenapa Website Ini Ada</h2>
+
+    <p class="lead">
       Website ini adalah ruang yang saya pakai untuk merapikan pikiran, menyimpan catatan penting, dan membagikan hal-hal yang mungkin bermanfaat untuk orang lain.
     </p>
-<div style="margin-top: 28px; max-width: 900px;">
-<p>
-        Saya percaya, menulis itu seperti membuat “peta”: membantu kita melihat perjalanan dengan lebih jernih. Kadang isinya sederhana—ringkasan bacaan, pelajaran dari pekerjaan, atau perjuangan harian—kadang juga lebih panjang seperti esai dan gagasan.
-        Semua ditulis dengan niat yang sama: belajar, berbagi, dan bertumbuh.
-      </p>
-<h3 style="margin-top: 28px;">Apa yang Bisa Kamu Temukan di Sini</h3>
-<ul style="margin-top: 10px; padding-left: 18px;">
-<li><strong>Catatan Harian</strong> — potongan cerita, pembelajaran kecil, dan momen yang ingin disimpan.</li>
-<li><strong>Pemikiran</strong> — ide, sudut pandang, dan rangkuman bacaan yang mengajak kita berpikir ulang.</li>
-<li><strong>Motivasi</strong> — dorongan ringan saat energi sedang turun, ditulis tanpa menggurui.</li>
-<li><strong>Perjuangan</strong> — evaluasi diri, nilai hidup, dan pelajaran dari proses.</li>
-</ul>
-<h3 style="margin-top: 28px;">Nilai yang Saya Jaga</h3>
-<ul style="margin-top: 10px; padding-left: 18px;">
-<li><strong>Jujur</strong> pada proses (termasuk saat salah dan masih belajar).</li>
-<li><strong>Sederhana</strong> dalam penyampaian, agar mudah dipahami.</li>
-<li><strong>Terbuka</strong> pada masukan, karena tidak ada tulisan yang selesai sekali jadi.</li>
-<li><strong>Bermanfaat</strong> — minimal, setelah membaca kamu pulang membawa satu hal kecil yang bisa dipakai.</li>
-</ul>
-<h3 style="margin-top: 28px;">Bekerja Sama / Kolaborasi</h3>
-<p style="margin-top: 10px;">
-        Kalau kamu ingin berdiskusi, mengundang saya untuk mengisi kelas/workshop, atau sekadar menyapa, silakan masuk ke halaman
-        <a href="contact.html">Contact</a>. Saya biasanya membalas secepat mungkin.
-      </p>
-<div style="margin-top: 28px;">
-<a class="btn" href="contact.html">Hubungi Saya</a>
-<a class="btn btn-outline" href="catatan/index.html?label=harian" style="margin-left: 10px;">Baca Catatan</a>
-</div>
-</div>
-</div>
+
+    <p>
+      Saya percaya, menulis itu seperti membuat “peta”: membantu kita melihat perjalanan dengan lebih jernih. Kadang isinya sederhana—ringkasan bacaan, pelajaran dari pekerjaan, atau perjuangan harian—kadang juga lebih panjang seperti esai dan gagasan.
+      Semua ditulis dengan niat yang sama: belajar, berbagi, dan bertumbuh.
+    </p>
+
+    <h3>Apa yang Bisa Kamu Temukan di Sini</h3>
+    <ul>
+      <li><strong>Catatan Harian</strong> — potongan cerita, pembelajaran kecil, dan momen yang ingin disimpan.</li>
+      <li><strong>Pemikiran</strong> — ide, sudut pandang, dan rangkuman bacaan yang mengajak kita berpikir ulang.</li>
+      <li><strong>Motivasi</strong> — dorongan ringan saat energi sedang turun, ditulis tanpa menggurui.</li>
+      <li><strong>Perjuangan</strong> — evaluasi diri, nilai hidup, dan pelajaran dari proses.</li>
+    </ul>
+
+    <h3>Nilai yang Saya Jaga</h3>
+    <ul>
+      <li><strong>Jujur</strong> pada proses (termasuk saat salah dan masih belajar).</li>
+      <li><strong>Sederhana</strong> dalam penyampaian, agar mudah dipahami.</li>
+      <li><strong>Terbuka</strong> pada masukan, karena tidak ada tulisan yang selesai sekali jadi.</li>
+      <li><strong>Bermanfaat</strong> — minimal, setelah membaca kamu pulang membawa satu hal kecil yang bisa dipakai.</li>
+    </ul>
+
+    <h3>Bekerja Sama / Kolaborasi</h3>
+    <p>
+      Kalau kamu ingin berdiskusi, mengundang saya untuk mengisi kelas/workshop, atau sekadar menyapa, silakan masuk ke halaman
+      <a href="contact.html">Contact</a>. Saya biasanya membalas secepat mungkin.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-glass" href="contact.html">Hubungi Saya</a>
+      <a class="btn btn-glass btn-outline" href="catatan/index.html?label=harian">Baca Catatan</a>
+    </div>
+  </div>
 </section>
+
 <!-- ================= FOOTER ================= -->
 <!-- MEDIA SOSIAL -->
 <section class="media-social">
