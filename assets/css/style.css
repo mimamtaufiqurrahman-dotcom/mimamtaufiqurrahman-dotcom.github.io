@@ -2115,4 +2115,89 @@ article.post p:first-of-type::first-letter {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+/* ===== KOTAK KIRI = KOTAK KANAN, GAMBAR KIRI BOLEH LEBIH KECIL ===== */
+section.media-social .media-card{
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px !important;
+  align-items: start !important;
+}
 
+/* KOTAK kiri & kanan sama tinggi */
+section.media-social .media-profile,
+section.media-social .media-quote{
+  height: 560px !important;          /* ukuran kotak (samakan) */
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+}
+
+/* KIRI: gambar kecil di tengah kotak */
+section.media-social .media-profile{
+  display: flex !important;
+  flex-direction: column !important;
+
+  /* pilih salah satu:
+     - center (tengah semua)
+     - space-between (gambar di atas, teks+ikon di bawah rapi)
+  */
+  justify-content: space-between !important;   /* rekomendasi: lebih rapi */
+  align-items: center !important;
+  text-align: center !important;
+
+  padding: 18px !important;          /* jarak dalam kotak */
+  box-sizing: border-box !important;
+}
+
+/* gambar kiri tidak dipaksa memenuhi box */
+section.media-social .media-profile img{
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 420px !important;      /* gambar boleh kecil */
+  object-fit: contain !important;    /* tidak kepotong */
+  border-radius: 12px !important;
+
+  margin: 10px 0 14px 0 !important;  /* rapikan jarak */
+}
+
+/* teks + ikon tetap di bawah gambar (di dalam kotak) */
+section.media-social .media-profile h3{
+  margin: 0 0 10px 0 !important;
+}
+
+section.media-social .media-profile .social-icons{
+  margin-top: 0 !important;
+  padding-bottom: 10px !important;
+}
+
+/* KANAN: gambar memenuhi kotak */
+section.media-social .media-quote .quote-image{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  section.media-social .media-card{
+    grid-template-columns: 1fr !important;
+  }
+
+  section.media-social .media-profile,
+  section.media-social .media-quote{
+    height: auto !important;
+  }
+
+  section.media-social .media-profile{
+    justify-content: center !important; /* di mobile lebih natural */
+  }
+
+  section.media-social .media-profile img{
+    max-height: none !important;
+  }
+
+  section.media-social .media-quote .quote-image{
+    height: auto !important;
+  }
+}
