@@ -359,11 +359,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("scroll", () => {
-  const bar = document.getElementById("readingProgress");
-  if(!bar) return;
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const percent = (scrollTop / scrollHeight) * 100;
-  bar.style.width = percent + "%";
-});
+(function () {
+  let ticking = false;
+
+  function updateReadingProgress() {
+    const bar = document.getElementById("readingProgress");
+    if (!bar) return;
+
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const percent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+    bar.style.width = percent + "%";
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateReadingProgress();
+          ticking = false;
+        });
+      }
+    },
+    { passive: true }
+  );
+
+  // initialize once (for short pages)
+  document.addEventListener("DOMContentLoaded", updateReadingProgress);
+})();

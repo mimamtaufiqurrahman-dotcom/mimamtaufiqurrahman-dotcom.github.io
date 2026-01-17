@@ -14,6 +14,6 @@ Supaya otomatis sinkron setelah Anda menambah artikel baru di `artikel/`, jalank
 ### Cara memberi label ke artikel
 Tambahkan meta berikut di <head> setiap artikel:
 
-`<meta name="labels" content="harian,motivasi">`
+`<meta name="labels" content="harian">`
 
 Label dipisah koma, huruf kecil disarankan.

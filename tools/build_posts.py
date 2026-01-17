@@ -11,7 +11,7 @@ Opsional:
 Konsep:
 - Semua artikel disimpan di folder: artikel/*.html
 - Label/kategori ditentukan dari meta tag:
-    <meta name="labels" content="harian,motivasi,pemikiran">
+    <meta name="labels" content="harian,pemikiran">
   (boleh 1 atau lebih, dipisah koma)
 
 - Script ini akan:
