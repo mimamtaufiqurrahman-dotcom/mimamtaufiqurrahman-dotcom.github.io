@@ -4,24 +4,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Ruang catatan harian, pemikiran, dan perjuangan untuk Indonesia yang lebih adil dan beradab." name="description"/>
-<meta content="Beranda | Catatan Imam – Harian & Pemikiran" property="og:title">
-<meta content="Ruang catatan harian, pemikiran, dan perjuangan." property="og:description"/>
+<meta content="Pencarian catatan dan halaman di website." name="description"/>
+<meta content="Pencarian | Catatan Imam – Harian & Pemikiran" property="og:title"/>
+<meta content="Cari catatan dan halaman di seluruh website." property="og:description"/>
 <meta content="https://imam-taufiqurrahman.site/assets/images/og.jpg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Beranda | Catatan Imam – Harian & Pemikiran"/>
-<meta name="twitter:description" content="Ruang catatan harian, pemikiran, dan perjuangan untuk Indonesia yang lebih adil dan beradab."/>
+<meta name="twitter:title" content="Pencarian | Catatan Imam – Harian & Pemikiran"/>
+<meta name="twitter:description" content="Pencarian catatan dan halaman di website."/>
 <meta name="twitter:image" content="https://imam-taufiqurrahman.site/assets/images/og.jpg"/>
 <meta content="Catatan Imam – Harian & Pemikiran" property="og:site_name"/>
-<meta content="https://imam-taufiqurrahman.site/" property="og:url"/>
-<title>Beranda | Catatan Imam – Harian & Pemikiran</title>
+<meta content="https://imam-taufiqurrahman.site/search.html" property="og:url"/>
+<title>Pencarian | Catatan Imam – Harian & Pemikiran</title>
     
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://imam-taufiqurrahman.site/">
+<link rel="canonical" href="https://imam-taufiqurrahman.site/search.html">
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/variables.css" rel="stylesheet"/>
@@ -32,7 +32,6 @@
 </head>
 <body>
 <div id="readingProgress"></div>
-<!-- ================= HEADER ================= -->
 <!-- ================= HEADER ================= -->
 <header class="site-header">
 <div class="container nav-wrapper">
@@ -77,31 +76,39 @@
 </ul>
 </li>
 <li><a href="contact.html">Contact</a></li>
-<li class="nav-search"><form action="search.html" class="site-search" method="get" role="search"><label class="sr-only" for="siteSearchInput">Cari catatan</label><input autocomplete="off" id="siteSearchInput" name="q" placeholder="Cari catatan…" type="search"/><button aria-label="Cari" type="submit">Cari</button></form></li></ul>
+<!-- Search -->
+<li class="nav-search">
+<form action="search.html" class="site-search" method="get" role="search">
+<label class="sr-only" for="siteSearchInput">Cari catatan</label>
+<input autocomplete="off" id="siteSearchInput" name="q" placeholder="Cari semua…" type="search"/>
+<button aria-label="Cari" type="submit">Cari</button>
+</form>
+</li>
+</ul>
 </nav>
 </div>
 </header>
-<!-- ================= HERO ================= -->
-<section class="hero" id="hero">
-<img alt="Hero background" class="hero-bg" decoding="async" fetchpriority="high" src="assets/images/hero.jpg"/>
-<div class="hero-overlay"></div>
+<!-- ================= PAGE HEADER ================= -->
+<section class="page-header">
+<div class="container">
+<h1>Pencarian</h1>
+<p class="subtitle" id="searchSummary">Ketik kata kunci untuk mencari catatan dan halaman di website.</p>
+<!-- Search input khusus halaman pencarian (selalu tampil, termasuk mobile) -->
+<form action="search.html" class="site-search site-search-page" method="get" role="search">
+<label class="sr-only" for="siteSearchInputPage">Cari catatan</label>
+<div class="search-row">
+<input autocomplete="off" id="siteSearchInputPage" name="q" placeholder="Cari semua…" type="search"/>
+<button aria-label="Cari" class="search-btn" type="submit">
+<svg aria-hidden="true" fill="none" viewBox="0 0 24 24"><path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="2"></path><path d="M16.2 16.2 21 21" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</form>
+</div>
 </section>
-<!-- ================= CONTENT ================= -->
+<!-- ================= RESULTS ================= -->
 <section class="content">
 <div class="container">
-<h2>Catatan Terbaru</h2>
-  <p class="subtitle">
-    Tulisan-tulisan yang merekam perjalanan, gagasan, dan renungan.
-  </p>
-  <div id="homePostList" class="article-grid"></div>
-
-  <div id="homeEmpty" style="display:none; margin-top:14px; opacity:.9;">
-    <p>Belum ada catatan.</p>
-  </div>
-
-  <p style="margin-top:16px;">
-    <a class="btn btn-glass btn-sm" href="catatan/index.html">Lihat semua catatan →</a>
-  </p>
+<div class="article-grid" id="searchResults"></div>
 </div>
 </section>
 <!-- MEDIA SOSIAL -->
@@ -137,6 +144,5 @@
 </div>
 </footer>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/home-latest.js"></script>
 </body>
 </html>

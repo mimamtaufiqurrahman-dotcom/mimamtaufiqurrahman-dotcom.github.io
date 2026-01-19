@@ -4,31 +4,32 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Ruang catatan harian, pemikiran, dan perjuangan untuk Indonesia yang lebih adil dan beradab." name="description"/>
-<meta content="Beranda | Catatan Imam – Harian & Pemikiran" property="og:title">
-<meta content="Ruang catatan harian, pemikiran, dan perjuangan." property="og:description"/>
+<meta content="Halaman kontak untuk mengirim pesan, pertanyaan, atau kolaborasi." name="description"/>
+<meta content="Kontak | Catatan Imam – Harian & Pemikiran" property="og:title">
+<meta content="Kirim pesan, pertanyaan, atau ajakan kolaborasi." property="og:description"/>
 <meta content="https://imam-taufiqurrahman.site/assets/images/og.jpg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Beranda | Catatan Imam – Harian & Pemikiran"/>
-<meta name="twitter:description" content="Ruang catatan harian, pemikiran, dan perjuangan untuk Indonesia yang lebih adil dan beradab."/>
+<meta name="twitter:title" content="Kontak | Catatan Imam – Harian & Pemikiran"/>
+<meta name="twitter:description" content="Halaman kontak untuk mengirim pesan, pertanyaan, atau kolaborasi."/>
 <meta name="twitter:image" content="https://imam-taufiqurrahman.site/assets/images/og.jpg"/>
 <meta content="Catatan Imam – Harian & Pemikiran" property="og:site_name"/>
-<meta content="https://imam-taufiqurrahman.site/" property="og:url"/>
-<title>Beranda | Catatan Imam – Harian & Pemikiran</title>
+<meta content="https://imam-taufiqurrahman.site/contact.html" property="og:url"/>
+<title>Kontak | Catatan Imam – Harian & Pemikiran</title>
     
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="canonical" href="https://imam-taufiqurrahman.site/">
+<link rel="canonical" href="https://imam-taufiqurrahman.site/contact.html">
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- CSS -->
 <link href="assets/css/variables.css" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
-<!-- FONT AWESOME (ICON SOSIAL) -->
+<!-- Font Awesome (single) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
-  <link rel="preload" as="image" href="assets/images/hero.jpg" imagesizes="100vw" />
+  <link rel="preload" as="image" href="assets/images/hero--contact.jpg" imagesizes="100vw" />
 </head>
 <body>
 <div id="readingProgress"></div>
@@ -81,29 +82,67 @@
 </nav>
 </div>
 </header>
+<!-- ================= MAIN ================= -->
+<main>
 <!-- ================= HERO ================= -->
-<section class="hero" id="hero">
-<img alt="Hero background" class="hero-bg" decoding="async" fetchpriority="high" src="assets/images/hero.jpg"/>
+<section class="hero hero--inner hero--contact">
 <div class="hero-overlay"></div>
 </section>
-<!-- ================= CONTENT ================= -->
-<section class="content">
-<div class="container">
-<h2>Catatan Terbaru</h2>
-  <p class="subtitle">
-    Tulisan-tulisan yang merekam perjalanan, gagasan, dan renungan.
-  </p>
-  <div id="homePostList" class="article-grid"></div>
-
-  <div id="homeEmpty" style="display:none; margin-top:14px; opacity:.9;">
-    <p>Belum ada catatan.</p>
-  </div>
-
-  <p style="margin-top:16px;">
-    <a class="btn btn-glass btn-sm" href="catatan/index.html">Lihat semua catatan →</a>
-  </p>
+<!-- ================= CONTACT ================= -->
+<section class="section">
+<div class="container narrow">
+<div class="article-content">
+<h2>Hubungi Saya</h2>
+<p>
+          Form di bawah ini bisa kamu gunakan untuk mengirim pesan langsung.
+          Jika lebih nyaman, kamu juga bisa menghubungi lewat email atau media sosial.
+        </p>
+<div class="article-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:24px 0;">
+<div class="article-card" style="padding:18px;">
+<h3 style="margin:0 0 6px;">Email</h3>
+<p style="margin:0;">contoh@email.com</p>
+</div>
+<div class="article-card" style="padding:18px;">
+<h3 style="margin:0 0 6px;">WhatsApp</h3>
+<p style="margin:0;">+62 8xx-xxxx-xxxx</p>
+</div>
+<div class="article-card" style="padding:18px;">
+<h3 style="margin:0 0 6px;">Lokasi</h3>
+<p style="margin:0;">Indonesia</p>
+</div>
+</div>
+<form action="search.html" class="contact-form" method="post" style="margin-top:28px;">
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+<div>
+<label for="nama" style="display:block; font-weight:600; margin-bottom:6px;">Nama</label>
+<input id="nama" name="nama" placeholder="Nama kamu" required="" style="width:100%; padding:12px 12px; border:1px solid rgba(0,0,0,.12); border-radius:12px;" type="text"/>
+</div>
+<div>
+<label for="email" style="display:block; font-weight:600; margin-bottom:6px;">Email</label>
+<input id="email" name="email" placeholder="nama@email.com" required="" style="width:100%; padding:12px 12px; border:1px solid rgba(0,0,0,.12); border-radius:12px;" type="email"/>
+</div>
+</div>
+<div style="margin-top:14px;">
+<label for="subjek" style="display:block; font-weight:600; margin-bottom:6px;">Subjek</label>
+<input id="subjek" name="subjek" placeholder="Misalnya: Kolaborasi / Pertanyaan / Saran" required="" style="width:100%; padding:12px 12px; border:1px solid rgba(0,0,0,.12); border-radius:12px;" type="text"/>
+</div>
+<div style="margin-top:14px;">
+<label for="pesan" style="display:block; font-weight:600; margin-bottom:6px;">Pesan</label>
+<textarea id="pesan" name="pesan" placeholder="Tulis pesan kamu di sini..." required="" rows="6" style="width:100%; padding:12px 12px; border:1px solid rgba(0,0,0,.12); border-radius:12px; resize:vertical;"></textarea>
+</div>
+<div style="display:flex; gap:12px; align-items:center; margin-top:16px; flex-wrap:wrap;">
+<button class="btn-submit" style="padding:12px 16px; border-radius:999px; border:1px solid rgba(0,0,0,.12); background:#111; color:#fff; font-weight:700; cursor:pointer;" type="submit">
+              Kirim Pesan
+            </button>
+<small style="opacity:.75;">
+              Dengan mengirim pesan, kamu menyetujui bahwa pesan akan dipakai untuk keperluan balasan komunikasi.
+            </small>
+</div>
+</form>
+</div>
 </div>
 </section>
+</main>
 <!-- MEDIA SOSIAL -->
 <section class="media-social">
 <div class="container">
@@ -114,7 +153,7 @@
 <div class="media-card">
 <!-- KIRI: FOTO / LOGO -->
 <div class="media-profile">
-<img alt="Foto Profil" decoding="async" loading="lazy" src="assets/images/profile.jpg"/>
+<img alt="Foto Profil" src="assets/images/profile.jpg"/>
 <h3>Akun Resmi</h3>
 <div class="social-icons">
 <a aria-label="Facebook" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -125,7 +164,7 @@
 </div>
 <!-- KANAN: QUOTE IMAGE -->
 <div class="media-quote">
-<img alt="Quote" class="quote-image" decoding="async" loading="lazy" src="assets/images/quote.jpg"/>
+<img alt="Quote" class="quote-image" src="assets/images/quote.jpg"/>
 </div>
 </div>
 </div>
@@ -137,6 +176,5 @@
 </div>
 </footer>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/home-latest.js"></script>
 </body>
 </html>
