@@ -7,6 +7,24 @@
   ],
   "posts": [
     {
+      "title": "Tentang Cinta dan Kesabaran",
+      "url": "../artikel/tentang-cinta-dan-kesabaran.html",
+      "date": "2026-01-20",
+      "labels": [
+        "harian"
+      ],
+      "excerpt": "Cinta adalah ketika ia, pada suatu hari, merajuk manja kepadamu."
+    },
+    {
+      "title": "Tentang Bertahan",
+      "url": "../artikel/tentang-bertahan.html",
+      "date": "2026-01-20",
+      "labels": [
+        "harian"
+      ],
+      "excerpt": "Mencari ketenangan itu bukan dengan cara pergi."
+    },
+    {
       "title": "Nilai Kesetiaan",
       "url": "../artikel/nilai-kesetiaan.html",
       "date": "2026-01-20",
@@ -14,6 +32,15 @@
         "harian"
       ],
       "excerpt": "Sering kali, perjuangan kita dimulai dari keyakinan bahwa sudut pandang kitalah yang paling tepat. Kita sibuk membenarkan cara berpikir sendiri, menguatkan logika dengan argumen, …"
+    },
+    {
+      "title": "Lapuk Telah",
+      "url": "../artikel/lapuk-telah.html",
+      "date": "2026-01-20",
+      "labels": [
+        "harian"
+      ],
+      "excerpt": "Lapuk telah keyakinan yang dulu kukira kokoh. Bukan karena ketiadaan niat, melainkan karena kalkulasi yang keliru arah. Perhitungan rupanya lebih sering dipergunakan untuk menjuml…"
     },
     {
       "title": "Kamu, Iya Kamu",

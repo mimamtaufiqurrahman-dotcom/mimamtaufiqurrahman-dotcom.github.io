@@ -2354,3 +2354,70 @@ section.media-social .media-quote{
   box-shadow: 0 10px 30px rgba(0,0,0,.06) !important;
 }
 
+/* ===== Artikel: extras (reading time + prev/next + related) ===== */
+.post-extras{
+  padding: 28px 0 8px;
+}
+
+.post-nav{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 8px 0 22px;
+}
+
+.post-nav-link{
+  display: block;
+  padding: 14px 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+}
+
+.post-nav-link:hover{
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.post-nav-kicker{
+  display: block;
+  font-size: 12px;
+  opacity: .75;
+  margin-bottom: 4px;
+}
+
+.post-nav-title{
+  display: block;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.post-nav-spacer{
+  display: block;
+}
+
+.related-block{
+  padding-top: 10px;
+}
+
+.related-title{
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.related-list{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.related-empty{
+  opacity: .8;
+  margin: 0;
+}
+
+@media (max-width: 900px){
+  .related-list{ grid-template-columns: 1fr; }
+  .post-nav{ grid-template-columns: 1fr; }
+}
+
