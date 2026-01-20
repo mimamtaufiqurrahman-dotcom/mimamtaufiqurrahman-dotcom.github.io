@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imam-taufiqurrahman.site/sitemap.xml
